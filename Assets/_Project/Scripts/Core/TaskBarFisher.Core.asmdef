@@ -1,0 +1,16 @@
+{
+    "name": "TaskBarFisher.Core",
+    "rootNamespace": "TaskBarFisher.Core",
+    "references": [
+        "TaskBarFisher.Shared"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

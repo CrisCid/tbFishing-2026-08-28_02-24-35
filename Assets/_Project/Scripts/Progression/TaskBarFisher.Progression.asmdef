@@ -1,0 +1,17 @@
+{
+    "name": "TaskBarFisher.Progression",
+    "rootNamespace": "TaskBarFisher.Progression",
+    "references": [
+        "TaskBarFisher.Shared",
+        "TaskBarFisher.Core"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
