@@ -1,0 +1,28 @@
+#!/bin/sh
+# Keep installed agent skills under version control.
+#  - .agents/skills   : canonical store managed by `npx skills`
+#  - .claude/skills    : portable real copies that Claude Code reads (no symlinks, Windows-safe)
+# Both are synced and staged on every commit so they travel with every push.
+# Enable once per clone:  git config core.hooksPath .githooks
+
+repo_root=$(git rev-parse --show-toplevel)
+cd "$repo_root" || exit 0
+
+# Mirror .agents/skills -> .claude/skills as real files (deref any symlinks)
+if [ -d .agents/skills ]; then
+	mkdir -p .claude/skills
+	for d in .agents/skills/*/; do
+		[ -d "$d" ] || continue
+		name=$(basename "$d")
+		rm -rf ".claude/skills/$name"
+		cp -RL "$d" ".claude/skills/$name"
+	done
+fi
+
+for path in .agents skills-lock.json .claude/skills; do
+	if [ -e "$path" ]; then
+		git add -- "$path"
+	fi
+done
+
+exit 0
