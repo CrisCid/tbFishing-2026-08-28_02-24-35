@@ -117,4 +117,3 @@ InitTestScene*.unity*
 .claude/*
 # ...but keep shared agent skills under version control so every teammate's Claude sees them
 !.claude/skills/
-game_design_overview.md
